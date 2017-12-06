@@ -1,0 +1,23 @@
+
+
+#Build the app
+Here’s what ls should show:
+
+$ ls
+Dockerfile		app.py			requirements.txt
+
+#Create Docker image
+
+docker build -t friendlyhello .
+
+#To check if the image got created
+ docker images
+
+REPOSITORY            TAG                 IMAGE ID
+friendlyhello         latest              326387cea398
+
+
+#Run the app --> Create container
+Run the app, mapping your machine’s port 3000 to the container’s published port 80 using -p:
+
+docker run -p 3000:80 friendlyhello
