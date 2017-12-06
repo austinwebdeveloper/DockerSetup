@@ -1,0 +1,17 @@
+
+
+
+# get to waitcheck folder
+cd waitchecknode
+
+# Pull latest code
+git pull
+
+#Remove old image
+docker rmi -f waitcheckimage
+
+# create docker image
+docker build -t waitcheckimage .
+
+# to run docker container with letsencrypt
+docker run -d --name waitcheckcontainer     -e VIRTUAL_HOST=waitcheck.austinconversionoptimization.com     -e VIRTUAL_PORT=3000     -e LETSENCRYPT_HOST=waitcheck.austinconversionoptimization.com     -e LETSENCRYPT_EMAIL=atxwebdesigner@gmail.com     waitcheckimage
