@@ -21,3 +21,12 @@ friendlyhello         latest              326387cea398
 Run the app, mapping your machine’s port 3000 to the container’s published port 80 using -p:
 
 docker run -p 3000:80 friendlyhello
+
+
+#To look for docker containers
+
+docker ps
+
+# To look for docker logs
+
+docker logs containerid
