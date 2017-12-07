@@ -13,5 +13,11 @@ docker rmi -f waitcheckimage
 # create docker image
 docker build -t waitcheckimage .
 
+#remove docker container
+docker rm -f waitcheckcontainer
+
 # to run docker container with letsencrypt
 docker run -d --name waitcheckcontainer     -e VIRTUAL_HOST=waitcheck.austinconversionoptimization.com     -e VIRTUAL_PORT=3000     -e LETSENCRYPT_HOST=waitcheck.austinconversionoptimization.com     -e LETSENCRYPT_EMAIL=atxwebdesigner@gmail.com     waitcheckimage
+
+# View log file
+docker logs -f waitcheckcontainer
