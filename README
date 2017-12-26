@@ -1,4 +1,19 @@
+#Installing Docker on Centos 7
+yum install docker
 
+#Start the docker daemon
+sudo service docker start
+
+------------------------------------------------------------------
+#Install git
+yum install git
+
+#Get the code from the git
+git clone <GIT URL>
+
+#then move to the folder
+cd <FOLDER NAME>
+-------------------------------------------------------------------
 
 #Build the app
 Here’s what ls should show:
@@ -11,6 +26,16 @@ Dockerfile		app.py			requirements.txt
 docker build -t friendlyhello .
 
 #To check if the image got created
+ docker images
+
+REPOSITORY            TAG                 IMAGE ID
+none                 none              326387cea398
+
+#Now we need to tag the image to make it latest and name it
+#docker tag <IMAGEID>[:tag] <IMAGENAME>:latest
+ docker tag 326387cea398 friendlyhello:latest
+
+#To check if the image got created with tag and name
  docker images
 
 REPOSITORY            TAG                 IMAGE ID
