@@ -1,0 +1,50 @@
+
+# Make sure that your app is running good in your local machine.
+
+# Create an Image in local Machine
+
+  docker build -t <IMAGE NAME> .
+  Ex: docker build -t iautoscanimage .
+  
+# Tag Images as Latest if not
+  
+  docker tag <IMAGE NAME> <TAG NAME>
+  Ex: docker tag iautoscanimage atxwebdesigner/iautoscanimage
+  
+# Login to Docker Hub
+
+  docker login --username=<USER NAME>
+  Ex: docker login --username=atxwebdesigner
+  This command asks password to connect to docker hub, So you need to provide the docker hub login password.
+  Password: Lbfdbb30
+  
+# Push the Image to Docker hub
+
+  docker push <REPOSITORY NAME>
+  Ex: docker push atxwebdesigner/iautoscanimage
+  
+  After this comman visit the docker hub repository to check the this command has worked or not 
+  https://cloud.docker.com/swarm/atxwebdesigner/repository/list
+  
+  
+# Pull the Image into Server
+
+  Login into putty by using credentials 
+  Go to root directory 
+  >>  Sudo su
+  docker pull <REPOSITORY NAME>
+  Ex: docker pull atxwebdesigner/iautoscanimage 
+  
+ # Check the Images list
+   docker images
+   
+ # Run the docker file
+ 
+  docker run -d --name <CONTAINER NAME> -e VIRTUAL_HOST = <DOMAIN NAME> -e VIRTUAL_PORT =<PORT NUMBER> -e LETSENCRYPT_HOST =<DOMAIN NAME> -e LETSENCRYPT_EMAIL = <EMAIL ID> <IMAGE NAME>
+  Ex: docker run -d --name iautoscancontainer -e VIRTUAL_HOST = iauto.austinconversionoptimization.com -e VIRTUAL_PORT =8080 -e LETSENCRYPT_HOST =iauto.austinconversionoptimization.com -e LETSENCRYPT_EMAIL = atxwebdesigner1@gmail.com atxwebdesigner/iautoscanimage 
+   
+# View log file
+docker logs -f <CONTAINER NAME>
+Ex: docker logs -f iautoscancontainer
+  
+
