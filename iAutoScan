@@ -14,9 +14,9 @@
 # Login to Docker Hub
 
   docker login --username=<USER NAME>
-  Ex: docker login --username=atxwebdesigner
+  Ex: docker login --username= nuevesol
   This command asks password to connect to docker hub, So you need to provide the docker hub login password.
-  Password: Lbfdbb30
+  Password: ******
   
 # Push the Image to Docker hub
 
