@@ -1,0 +1,23 @@
+# Make sure that your app is running good in your local machine or not. If everything is good in local machine then follow the below steps.
+
+# Create an Image in local Machine
+
+docker build -t atxwebdesigner/windows .
+  
+# Push the Image to Docker hub
+
+ docker push atxwebdesigner/windows
+ 
+  
+# Pull the Image into Server
+
+docker pull atxwebdesigner/windows   
+
+   
+# Run the docker file
+ 
+ docker run -d --name windows -e VIRTUAL_HOST = windows.austinconversionoptimization.com -e VIRTUAL_PORT =5000 -e LETSENCRYPT_HOST =windows.austinconversionoptimization.com -e LETSENCRYPT_EMAIL = atxwebdesigner1@gmail.com atxwebdesigner/windows 
+   
+   
+# View log file
+ docker logs -f windows
