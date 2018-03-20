@@ -1,0 +1,22 @@
+# Make sure that your app is running good in your local machine or not. If everything is good in local machine then follow the below steps.
+
+# Create an Image in local Machine
+
+docker build -t atxwebdesigner/ridemap .
+  
+# Push the Image to Docker hub
+
+ docker push atxwebdesigner/ridemap
+ 
+  
+# Pull the Image into Server
+
+docker pull atxwebdesigner/ridemap   
+
+   
+# Run the docker file
+ 
+ docker run -d --name ridemap -e VIRTUAL_HOST=ridemap.austinwebdeveloper.co -e VIRTUAL_PORT=3000 -e LETSENCRYPT_HOST=ridemap.austinwebdeveloper.co -e LETSENCRYPT_EMAIL=atxwebdesigner1@gmail.com atxwebdesigner/ridemap 
+   
+# View log file
+ docker logs -f ridemap
