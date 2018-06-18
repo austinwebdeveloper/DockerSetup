@@ -16,8 +16,7 @@ docker pull atxwebdesigner/windows
    
 # Run the docker file
  
- docker run -d --name windows -e VIRTUAL_HOST = windows.austinconversionoptimization.com -e VIRTUAL_PORT =5000 -e LETSENCRYPT_HOST =windows.austinconversionoptimization.com -e LETSENCRYPT_EMAIL = atxwebdesigner1@gmail.com atxwebdesigner/windows 
-   
+docker run -d --name windows -e VIRTUAL_HOST=windows.austinconversionoptimization.com -e VIRTUAL_PORT=5000 -e LETSENCRYPT_HOST=windows.austinconversionoptimization.com -e LETSENCRYPT_EMAIL=atxwebdesigner1@gmail.com atxwebdesigner/windows   
    
 # View log file
  docker logs -f windows
