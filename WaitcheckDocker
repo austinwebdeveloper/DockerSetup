@@ -21,3 +21,6 @@ docker run -d --name waitcheckcontainer     -e VIRTUAL_HOST=waitcheck.austinconv
 
 # View log file
 docker logs -f waitcheckcontainer
+
+#save logs
+docker logs -f waitcheckcontainer >text.txt
