@@ -13,13 +13,15 @@ docker build -t atxwebdesigner/mystro .
 
 docker pull atxwebdesigner/mystro   
 
-   
+# Remove old container in docker 
+
+docker rm -f mystro
+
 # Run the docker file
  
 docker run -d --name mystro -e VIRTUAL_HOST=mystro.austinconversionoptimization.com -e VIRTUAL_PORT=5050 -e LETSENCRYPT_HOST=mystro.austinconversionoptimization.com -e LETSENCRYPT_EMAIL=atxwebdesigner1@gmail.com atxwebdesigner/mystro
 
-   
-   
+     
 # View log file
  docker logs -f mystro
  
